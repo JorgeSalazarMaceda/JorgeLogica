@@ -1,0 +1,244 @@
+
+
+/********************** PARA TAMAÑO DE MI PC (TAMAÑOS GENÉRICOS) ********************/
+#cabecera{
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  width: 100%;
+}
+#menu{
+  background-color: lightblue;
+  position:fixed;
+  z-index: 9999;
+  width: 100%;
+}
+#equipo{
+  padding-top: 10%;
+}
+#contenido{
+  padding-top: 10%;
+}
+#seccion-contacto{
+  padding-top: 10%;
+  padding-bottom: 2rem;
+} 
+h1 {
+  font-size: 6rem;
+}
+/* hacer las imágenes más pequeñas */
+.carousel-item img {
+  max-height: 25em;
+  object-fit: contain;
+}
+
+/* agregar bordes redondeados a las imágenes */
+.carousel-item img {
+  border-radius: 2rem;
+}
+.carousel-control-prev-icon,.carousel-control-next-icon {
+height: 20%;
+width: 20%;
+background-color: rgba(0, 0, 0, 0.5);
+border-radius: 50%;
+}
+
+.team-member img{
+  width: 100%;
+}
+
+/************************* CAMBIO COLOR FLECHAS CAROUSEL **************************/
+.carousel-control-prev,.carousel-control-next {
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+  transform: scale(0.5); 
+}
+.carousel-control-prev:hover,.carousel-control-next:hover {
+    background-color: lightblue;
+    transform: scale(0.7);
+}
+
+#team .container {
+margin-left: 10%;
+}
+.section-heading{
+  margin-right: 10%;
+}
+
+/************************* LOGO **************************/
+/*Quitamos el fondo del logo para que quede mas estético usando las propiedades css*/
+#imagenLogo {
+filter: brightness(1.1);
+mix-blend-mode: multiply;
+height: 7vh;
+margin-right: 0%;
+}
+
+/************************** Estilo de hover para los elementos de menú /**************************/
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: background-color 0.3s;
+}
+
+/************************** Imagen pulgar mensaje Jorge (TEXTO SOBRE BOOTSTRAP) **************************/
+.rounded-circle{
+    width: 8%;
+}
+
+#menu:checked ~ #contenido {
+  position: relative;
+  top: 4rem;
+  transition: top 0.3s ease;
+}
+
+
+/************************** TOP VIDEOJUEGOS MES --> PARTE GRID RESPONSIVE **************************/
+#topJuegos{
+  padding-top: 10%;
+  text-align: center;
+}
+.card{
+overflow: hidden;
+padding: 1rem;
+border-radius: 0.3rem;
+box-shadow: 0 0.2rem 0.3rem rgba(0, 0, 0, 0.4);
+}
+.gallery{
+display: grid;
+gap: 1rem;
+grid-auto-rows: 12rem;
+grid-template-columns: repeat(auto-fill,minmax(15rem, 1fr)); /*Llename este grid y te pasamos un minimo (15rem) y un máximo de todo el espacio disponible me lo llenas como puedas (1fr)*/
+}
+
+.featured{
+grid-column: span 2;
+}
+
+
+
+/************************* DISEÑOS RESPONSIVE CON @MEDIA **************************/
+/********************  CAMBIAMOS LOS ESTILOS PARA ADAPTAR A TAMAÑOS MAS PEQUEÑOS Y CAMBIAMOS COLORES FUENTES PARA QUE SE APRECIEN LOS CAMBIOS *********************/
+
+/* Estilos para dispositivos pequeños (similar a móvil) --> Ponemos tonalidades grisáceas */
+@media only screen and (max-width: 767px) {
+
+  #menu{
+    background-color: lightgray !important; /* Ponemos fondos grises */
+  }
+  #imagenLogo{
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+    margin-right: 0%;
+  }
+  #contenido{ /*Aumentamos el padding en funcion de la necesidad para que no se solapen header y contenido */
+    padding-top: 40%;
+  }
+  /* Cambia el tamaño de fuente de h1 a 1.5rem */
+  h1 {
+    font-size: 1.5rem;
+    font-family:fantasy;
+  }
+  #topJuegos{
+    padding-top: 20%;
+  }
+  a{
+    font-family:fantasy;
+  }
+  /* Agrega un efecto hover a los enlaces */
+  a:hover {
+    text-decoration: underline;
+  }
+  body{
+    margin-left: 5%;
+    color: gray;
+  }
+
+  .carousel-control-prev,.carousel-control-next {
+    background-color: rgba(187, 187, 187, 0.5);
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+    transform: scale(0.2); 
+  }
+  .carousel-control-prev:hover,.carousel-control-next:hover {
+      background-color: lightgray;
+      transform: scale(0.4);
+    }
+
+    /* Modificamos el color solo del texto de la sección servicios footer en tamaño movil (usando id bootstrap) */
+    #servicios-fila-1, #servicios-fila-2, #servicios-fila-3 {
+      color: red;
+    }
+
+    /* Modificamos el texto (tamaño y fuente) del footer en tamaño movil (usando clase bootstrap)  */
+    footer p.fs-5 {
+      text-align: center;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1rem;
+    }
+}
+
+
+
+/************************* ESTILOS DISPOSITIVOS MEDIANOS (similar a tablet) --> Ponemos tonalidades verdosas /**************************/
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+#menu{
+  background-color: lightgreen !important; /* Ponemos fondos verdosos */
+}
+#imagenLogo{
+filter: brightness(1.1);
+mix-blend-mode: multiply;
+margin-right: 0%;
+}
+#contenido{ /*Aumentamos el padding en funcion de la necesidad para que no se solapen header y contenido */
+padding-top: 30%;
+}
+    /* Cambia el tamaño de fuente de h1 a 1.5rem */
+h1 {
+font-size: 2 rem;
+font-family:fantasy;
+}
+#topJuegos{
+  padding-top: 25%;
+}
+a{
+font-family:fantasy;
+}
+/* Agrega un efecto hover a los enlaces */
+a:hover {
+text-decoration: underline;
+}
+body{
+color: green;
+}
+
+.carousel-control-prev,.carousel-control-next {
+    background-color: rgba(187, 187, 187, 0.5);
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+    transform: scale(0.2); 
+  }
+.carousel-control-prev:hover,.carousel-control-next:hover {
+    background-color: lightgreen;
+    transform: scale(0.5);
+  }
+   /* Modificamos el color solo del texto de la sección servicios footer en tamaño tablet (usando id bootstrap) */
+   #servicios-fila-1, #servicios-fila-2, #servicios-fila-3 {
+    color: blue;
+  }
+  /* Modificamos el texto del footer en tamaño tablet */
+  footer p.fs-5 {
+    font-family: fantasy;
+    font-size: 2rem;
+  }
+}
+
+
+
+
+  
+  
+  
+  
+  
